@@ -16,7 +16,7 @@ use App\Http\Controllers\LokasiController;
 use App\Http\Controllers\KarbonDioksidaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TemperatureController;
-
+use App\Http\Controllers\SoilController;
 
 
 /*
@@ -49,9 +49,10 @@ Route::get('/', [DashboardController::class, 'index']);
 //     ]);
 // });
 Route::get('/temp', [TemperatureController::class, 'index']);
-Route::get('/nh3', [DeskripsiSensorController::class, 'nh3']);
-Route::get('/ch4', [DeskripsiSensorController::class, 'ch4']);
-Route::get('/co', [DeskripsiSensorController::class, 'co']);
+Route::get('/soil', [SoilController::class, 'index']);
+// Route::get('/nh3', [DeskripsiSensorController::class, 'nh3']);
+// Route::get('/ch4', [DeskripsiSensorController::class, 'ch4']);
+// Route::get('/co', [DeskripsiSensorController::class, 'co']);
 // Route::get('/nh3', function () {
 //     return view('menu.nh3', [
 //         'title' => 'NH3',
@@ -99,18 +100,7 @@ Route::resource('/admin/lokasi/lokasi', LokasiController::class)->middleware('is
 
 
 // export excel
-Route::get('/exportch4', [ExportController::class, 'exportch4']);
-Route::get('/exportch4_', [ExportController::class, 'exportch4_kode2']);
-Route::get('/exportch4_bulanan', [ExportController::class, 'exportch4_bulanan']);
-Route::get('/exportch4_bulnanan_', [ExportController::class, 'exportch4_bulanan_kode2']);
-Route::get('/exportco', [ExportController::class, 'exportco']);
-Route::get('/exportco_', [ExportController::class, 'exportco_kode2']);
-Route::get('/exportco_bulanan', [ExportController::class, 'exportco_bulanan']);
-Route::get('/exportco_bulanan_', [ExportController::class, 'exportco_bulanan_kode2']);
-Route::get('/exportnh3', [ExportController::class, 'exportnh3']);
-Route::get('/exportnh3_', [ExportController::class, 'exportnh3_kode2']);
-Route::get('/exportnh3_bulanan', [ExportController::class, 'exportnh3_bulanan']);
-Route::get('/exportnh3_bulanan_', [ExportController::class, 'exportnh3_bulanan_kode2']);
+Route::get('/export-temp-daily', [ExportController::class, 'exportTempDaily']);
 
 
 

@@ -52,16 +52,16 @@
                     </div>
                     <div class="card-body all-icons col-lg-6 ">
                         <div class="row">
-                            <table id="tabel-temp" class="table">
+                            <table id="tabel-soil" class="table">
                             <thead>
                                 <tr>
                                     <th class="text-center">No</th>
                                     <th>Tanggal</th>
-                                    <th>Suhu</th>
+                                    <th>Kelembapan Tanah</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ( $temp as $data )
+                                @foreach ( $soil as $data )
                                 <tr>
                                     <td class="text-center">{{ $loop->iteration }}</td>
                                     <td>{{ $data->day }}</td>
@@ -85,12 +85,12 @@
                     <div class="card-body all-icons col-6 ">
                         <div class="row">
                             
-                            <table id="tabel-temp-bulan" class="table">
+                            <table id="tabel-soil-bulan" class="table">
                             <thead>
                                 <tr>
                                     <th class="text-center">No</th>
                                     <th>Bulan</th>
-                                    <th>Suhu</th>
+                                    <th>Kelembapan Tanah</th>
                                 
                                 </tr>
                             </thead>
@@ -114,11 +114,11 @@
                     <div class="card-body all-icons col-12 ">
                         <div class="row">
                             
-                            <table id="tabel-temp-detik" class="table">
+                            <table id="tabel-soil-detik" class="table">
                             <thead>
                                 <tr>
                                     <th class="text-center">No</th>
-                                    <th>Suhu</th>
+                                    <th>Kelembapan Tanah</th>
                                     <th>Waktu</th>
                                 
                                 </tr>
@@ -127,7 +127,7 @@
                                 @foreach ( $tempNow as $data )
                                 <tr>
                                     <td class="text-center">{{ $loop->iteration }}</td>
-                                    <td>{{ $data->temperature }}</td>
+                                    <td>{{ $data->soil_moisture }}</td>
                                     <td>{{ $data->created_at }}</td>
                                 @endforeach
 
@@ -186,7 +186,7 @@ var data = {
 labels: cData.label,
 datasets: [
     {
-    label: "Suhu" ,
+    label: "Kelembapan Tanah" ,
     data: cData.data,
     backgroundColor:"rgba(158, 118, 80, 0.288)",
     backgroundColor:"rgba(127, 155, 233, 0.1)",
@@ -201,7 +201,7 @@ var data2 = {
 labels: cData2.label,
 datasets: [
     {
-    label: "Suhu" ,
+    label: "Kelembapan Tanah" ,
     data: cData2.data,
     backgroundColor:"rgba(158, 118, 80, 0.288)",
     backgroundColor:"rgba(127, 155, 233, 0.1)",
@@ -256,7 +256,7 @@ var options1 = {
     plugins: {
         title: {
             display: true,
-            text: 'Suhu',
+            text: 'Kelembapan Tanah',
             font: {
             family: 'Comic Sans MS',
             size: 25,
@@ -314,7 +314,7 @@ var options = {
     plugins: {
         title: {
             display: true,
-            text: 'Suhu',
+            text: 'Kelembapan Tanah',
             font: {
             family: 'Comic Sans MS',
             size: 25,
