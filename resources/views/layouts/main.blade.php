@@ -49,27 +49,27 @@
                     </li>
                     @can('user')
                     <li class="">
-                        <a class="{{ ($title === "NH3") ? 'active' : '' }}" href="{{ ('/nh3/?id=1') }}">
-                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                        <a class="{{ ($title === "temp") ? 'active' : '' }}" href="{{ ('/temp/?id=1') }}">
+                            <i class='fa bi-thermometer icon' ></i>
                             <span class="text nav-text">Suhu</span>
                         </a>
                     </li> <li class="">
-                        <a class="{{ ($title === "CH4") ? 'active' : '' }}" href="{{ url('/ch4/?id=1') }}">
-                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
-                            <span class="text nav-text">Ph Tanahj</span>
+                        <a class="{{ ($title === "soil") ? 'active' : '' }}" href="{{ url('/soil/?id=1') }}">
+                            <i class='bx bi-bar-chart-fill icon' ></i>
+                            <span class="text nav-text">Kelembapan Tanah</span>
                         </a>
                     </li>
                     @endcan
                     @can('is_admin')
                     <li class="">
-                        <a class="{{ ($title === "NH3") ? 'active' : '' }}" href="{{ ('/nh3/?id=1') }}">
-                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                        <a class="{{ ($title === "temp") ? 'active' : '' }}" href="{{ ('/temp/?id=1') }}">
+                            <i class='bx bi-thermometer icon' ></i>
                             <span class="text nav-text">Suhu</span>
                         </a>
                     </li> <li class="">
-                        <a class="{{ ($title === "CH4") ? 'active' : '' }}" href="{{ url('/ch4/?id=1') }}">
-                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
-                            <span class="text nav-text">Ph Tanah</span>
+                        <a class="{{ ($title === "soil") ? 'active' : '' }}" href="{{ url('/soil/?id=1') }}">
+                            <i class='bx bi-bar-chart-fill icon' ></i>
+                            <span class="text nav-text">Kelembapan Tanah</span>
                     </li>
                     @endcan
                     <li class="">

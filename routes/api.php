@@ -21,4 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/esp', [DataSensorController::class, 'store']);
 
-
+Route::post('/sensor/humi', [SensorController::class, 'storeHumidity']);
+Route::post('/sensor/temp', [SensorController::class, 'storeTemperature']);

@@ -14,6 +14,8 @@ use App\Http\Controllers\DeskripsiSensorController;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\LokasiController;
 use App\Http\Controllers\KarbonDioksidaController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TemperatureController;
 
 
 
@@ -27,9 +29,9 @@ use App\Http\Controllers\KarbonDioksidaController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [KarbonDioksidaController::class, 'index'])->name('dashboard');
+// Route::get('/', [KarbonDioksidaController::class, 'index'])->name('dashboard');
 // Route::post('/esp', [DataSensorController::class, 'store']);
-
+Route::get('/', [DashboardController::class, 'index']);
 // Route::get('/', function () {
 //     return view('menu.app', [
 //         'title' => 'user Dashboard',
@@ -46,6 +48,7 @@ Route::get('/', [KarbonDioksidaController::class, 'index'])->name('dashboard');
 //         'title' => 'Admin Dashboard',
 //     ]);
 // });
+Route::get('/temp', [TemperatureController::class, 'index']);
 Route::get('/nh3', [DeskripsiSensorController::class, 'nh3']);
 Route::get('/ch4', [DeskripsiSensorController::class, 'ch4']);
 Route::get('/co', [DeskripsiSensorController::class, 'co']);

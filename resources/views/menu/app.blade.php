@@ -11,9 +11,10 @@
     <div class="col-lg-4 col-md-6 col-sm-6 mb-4" id="">
         <div class="card shadow-lg rounded-3" style="height: 200px;">
             <div class="card-body row mt-2"> 
-            <p class="card-title">Suhu <span class="float-end">{{ $terbaru->created_at }}</span></p>
-                <p class="card-text text-center" style="font-size: 40px">{{ $terbaru->CH4 }} ppm</p>
+            <p class="card-title">Suhu <span class="float-end"><?php echo ($terbaru) ? $terbaru->created_at : 0 ?></span></p>
+                <p class="card-text text-center" style="font-size: 40px">{{ ($terbaru) ? $terbaru->CH4 : 0 }} °C</p>
           </div>
+          @if($terbaru)
           @if ($terbaru->CH4 <= '2000' )
           <div class="card-footer" style="background-color: green; font-weight: bold;">
               <span class="text-center" ><img src="Gambar/smiling.png"   height="30px" width="30px" alt="" srcset=""> Keadaan Normal !! </span>
@@ -24,14 +25,16 @@
               <span class="text-center" ><img src="Gambar/sad.png"   height="30px" width="30px" alt="" srcset=""> Keadaan Memburuk !! </span>
           </div>                           
           @endif 
+          @endif
       </div>
     </div>
     <div class="col-lg-4 col-md-6 col-sm-6  mb-4 ">
             <div class="card shadow-lg rounded-3" style="height: 200px;">
               <div class="card-body row">                
-                <p class="card-title">PH TANAH <span class="float-end">{{ $terbaru2->created_at }}</span></p>
-                <p class="card-text text-center" style="font-size: 40px">{{ $terbaru2->NH3 }} ppm</p>
+                <p class="card-title">KELEMBABAN TANAH<span class="float-end">{{ ($terbaru) ? $terbaru2->created_at : 0 }}</span></p>
+                <p class="card-text text-center" style="font-size: 40px">{{ ($terbaru) ? $terbaru2->NH3 : 0 }} %</p>
               </div>
+              @if($terbaru)
               @if ($terbaru2->NH3 <= "50" )
                 <div class="card-footer" style="background-color: green; font-weight: bold;">
                     <span class="text-center" ><img src="Gambar/smiling.png"   height="30px" width="30px" alt="" srcset=""> Keadaan Normal !! </span>
@@ -42,6 +45,7 @@
                     <span class="text-center" ><img src="Gambar/sad.png"   height="30px" width="30px" alt="" srcset=""> Keadaan Memburuk !! </span>
                 </div>                           
               @endif 
+              @endif
             </div>
           </div>
            
