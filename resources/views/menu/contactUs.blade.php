@@ -11,7 +11,7 @@
                 <div class="card-body p-md-5 mx-md-4">
   
                   <div class="text-center">
-                    <h4 class="mt-1 mb-5 pb-1">Conact Us</h4> 
+                    <h4 class="mt-1 mb-5 pb-1">Contact Us</h4> 
                   </div>
                     @if (session()->has('success'))
 
@@ -26,7 +26,7 @@
                     @csrf
                     <div class="mb-3 mt-2 input-group">
                         <span class="input-group-text border-end-0"  style="background-color: transparent; width: 27px;"><img src="Gambar/person-fill.svg" width="20px" alt="" srcset=""></span>
-                        <input type="text"  name="nama" class="form-control @error('nama') is-invalid @enderror border-start-0 "  id="nama" placeholder="Nama" required>
+                        <input type="text"  name="nama" class="form-control @error('nama') is-invalid @enderror border-start-0 " value="{{auth()->user()->name}}"  id="nama" placeholder="Nama" required>
                         @error('nama')
                         <div class="invalid-feedback"></div>     
                           {{ $message }}                         
@@ -34,7 +34,7 @@
                       </div>
                       <div class="mb-3 mt-2 form-floating">
                         {{-- <span class="input-group-text border-end-0"  style="background-color: transparent; width: 27px;"><img src="Gambar/at.svg" width="20px" alt="" srcset=""></span> --}}
-                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"  id="email" placeholder="Email Address" autofocus required value="{{ old ('email') }}">
+                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{auth()->user()->email}}"  id="email" placeholder="Email Address" autofocus required value="{{ old ('email') }}">
                         <label for="email">Email Address</label>
                         @error('email')
                             <div class="invalid-feedback">

@@ -61,6 +61,12 @@
                         <span class="text nav-text">Kelembapan Tanah</span>
                     </a>
                 </li>
+                <li class="">
+                    <a class="" href="{{ url('/contactus') }}">
+                        <i class='bi bi-envelope icon'></i>
+                        <span class="text nav-text">Contact Us</span>
+                    </a>
+                </li>
                 @endcan
                 @can('is_admin')
                 <li class="">
@@ -73,15 +79,9 @@
                     <a class="{{ ($title === "soil") ? 'active' : '' }}" href="{{ url('/soil/?id=1') }}">
                         <i class='bx bi-bar-chart-fill icon'></i>
                         <span class="text nav-text">Kelembapan Tanah</span>
-                </li>
-                @endcan
-                <li class="">
-                    <a class="" href="{{ url('/contactus') }}">
-                        <i class='bi bi-envelope icon'></i>
-                        <span class="text nav-text">Contact Us</span>
                     </a>
                 </li>
-
+                @endcan
 
                 @can('is_admin')
                 <li class="">
@@ -199,7 +199,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
     <script>
-        
         $(document).ready(function () {
             $('#tabel-temp').DataTable({
                 dom: 'Bfrtip',

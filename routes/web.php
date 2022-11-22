@@ -50,17 +50,6 @@ Route::get('/', [DashboardController::class, 'index']);
 // });
 Route::get('/temp', [TemperatureController::class, 'index']);
 Route::get('/soil', [SoilController::class, 'index']);
-// Route::get('/nh3', [DeskripsiSensorController::class, 'nh3']);
-// Route::get('/ch4', [DeskripsiSensorController::class, 'ch4']);
-// Route::get('/co', [DeskripsiSensorController::class, 'co']);
-// Route::get('/nh3', function () {
-//     return view('menu.nh3', [
-//         'title' => 'NH3',
-//     ]);
-// });
-
-// Route::get('redirects', [HomeController::class, 'index'])->middleware('is_admin');
-
 
 // Route::get('/', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::get('/login', [LoginController::class, 'index']);
